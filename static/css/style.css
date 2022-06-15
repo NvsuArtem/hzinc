@@ -1,0 +1,9 @@
+.basket-container{
+    position: relative;
+}
+.basket-items{
+    position: absolute;
+    top:0;
+    width: 100%
+}
+

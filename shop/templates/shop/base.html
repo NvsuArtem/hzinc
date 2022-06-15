@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Hz inc.</title>
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  
+  </head>
+  <body>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark scrolling-navbar">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <img src="{% static 'img/HZ-logo-light.png' %}" alt="" style="wight:120px; height:30px">
+        </a>
+
+         <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <!-- Left links -->
+      <ul class="navbar-nav ms-auto mb-2  mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'shop:product_list'%}">Главная страница</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Звук</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Свет</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Концертное оборудование</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Контакты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">О нас</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+
+
+
+          <a href="{% url 'cart:cart_detail' %}" class="ml-2">
+            <span class="badge badge-pill bg-danger">{{ request.session.cart|length }}</span>
+            <i class="fa fa-shopping-cart red-text" style='color:red;font:bold;'></i>
+          </a>
+
+        </li>
+      </ul>
+
+    </div>
+      </div>
+    </nav>
+
+
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <div id="cart">
+
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>\
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

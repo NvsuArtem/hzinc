@@ -1,0 +1,70 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<section class="h-100" style="background-color: #eee;">
+  <div class="container h-100 py-5 mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100 pt-10">
+      <div class="col-10 pt-10">
+
+
+        {% for item in cart %}
+        {% with product=item.product %}
+        <div class="card rounded-3 mb-4">
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <img src="{{ product.image.url }}"
+                  class="img-fluid rounded-3">
+              </div>
+
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                <p class="lead fw-normal mb-2">{{ product.name }}</p>
+              </div>
+
+              <div class="col-md-1 col-lg-1 col-xl-1">
+                <p class="lead fw-normal mb-2">{{ item.quantity }}</p>
+              </div>
+
+             
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h5 class="mb-0">{{ item.price }}</h5>
+              </div>
+              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <a href="{% url 'cart:cart_remove' product.id%}" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endwith %}
+        {%endfor%}
+
+        {% if  cart|length > 0 %}
+        <div class="card">
+          <div class="card-body">
+            <a href="{% url 'orders:order_create' %}">
+            <button type="button" data-toggle="modal" data-target="#modalContactForm" class="btn btn-warning btn-block btn-lg">Оставить заявку</button>
+            </a>
+          </div>
+        </div>
+        {%endif%}
+
+        <div class="card">
+          <div class="card-body">
+            <a href="{% url 'shop:product_list' %}" class="btn btn-warning btn-block btn-lg">Вернутся к каталогу</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+{% endblock %}
+
+
