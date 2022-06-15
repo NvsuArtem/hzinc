@@ -83,8 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'intopython_db',
-        'USER': 'dbuser',
-        'PASSWORD': 'qwerty',
+        'USER': 'NvsuArtem',
+        'PASSWORD': 'qwerty123321',
+        'HOST': 'NvsuArtem.mysql.pythonanywhere-services.com',
     }
 }
 
