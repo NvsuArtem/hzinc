@@ -79,25 +79,25 @@ WSGI_APPLICATION = 'hzinc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'intopython_db',
-#         'USER': 'dbuser',
-#         'PASSWORD': 'qwerty',
-#         'HOST': '127.0.0.1',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'NvsuArtem$intopython_db',
-        'USER': 'NvsuArtem',
-        'PASSWORD': 'qwerty123321',
-        'HOST': 'NvsuArtem.mysql.pythonanywhere-services.com',
+        'NAME': 'intopython_db',
+        'USER': 'dbuser',
+        'PASSWORD': 'qwerty',
+        'HOST': '127.0.0.1',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'NvsuArtem$intopython_db',
+#         'USER': 'NvsuArtem',
+#         'PASSWORD': 'qwerty123321',
+#         'HOST': 'NvsuArtem.mysql.pythonanywhere-services.com',
+#     }
+# }
 
 
 
